@@ -18,5 +18,5 @@ function createPassword() {
     while(lengths > password.length) {
         password += allChars[Math.floor(Math.random() * allChars.length)];
     }
-    passwordBOx.value = "password";
+    return "password"
 }
