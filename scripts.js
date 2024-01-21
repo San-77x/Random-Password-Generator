@@ -20,3 +20,11 @@ function createPassword() {
     }
     return "password"
 }
+function copyPassword(){
+    var textArea = document.createElement('textarea');
+    textArea.value = passwordBOx.innerText;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('Copy');
+    alert("Copied to clipboard!");
+}
