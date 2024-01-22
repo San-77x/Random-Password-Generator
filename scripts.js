@@ -26,7 +26,7 @@ function createPassword() {
 
 const button = document.getElementById("gen");
 button.onclick = () => {
-  const pass =   createPassword()
+   createPassword()
 }
 
 const copyy =document.getElementById("copyButton")
