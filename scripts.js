@@ -4,7 +4,11 @@ const lowerCase = "abcdefghijklmnopqrstuvwxyz";
 const numbers = "1234567890";
 const symbols = "~!@#$%^&*_+-=?/><";
 const allChars = upperCase + lowerCase + numbers + symbols;
-const length = document.getElementById("lengthSelector");
+const elm = document.getElementById("lengthSelector")
+
+
+
+
 
 function createPassword() {
     let password = "";
@@ -13,7 +17,7 @@ function createPassword() {
     password += numbers[Math.floor(Math.random() * numbers.length)];
     password += symbols[Math.floor(Math.random() * symbols.length)];
 
-    while(length > password.length) {
+    while(elm.value > password.length) {
         password += allChars[Math.floor(Math.random() * allChars.length)];
     }
     passwordBOx.value = password
