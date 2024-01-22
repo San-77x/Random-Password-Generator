@@ -6,10 +6,6 @@ const symbols = "~!@#$%^&*_+-=?/><";
 const allChars = upperCase + lowerCase + numbers + symbols;
 const elm = document.getElementById("lengthSelector")
 
-
-
-
-
 function createPassword() {
     let password = "";
     password += upperCase.charAt(Math.floor(Math.random() * upperCase.length));
@@ -31,7 +27,7 @@ button.onclick = () => {
 
 const copyy =document.getElementById("copyButton")
 copyy.onclick = () => {
-    var copyText = document.getElementById("password");
+    let copyText = document.getElementById("password");
     copyText.select();
     navigator.clipboard.writeText(copyText.value);
     alert("Copied the text: " + copyText.value);
