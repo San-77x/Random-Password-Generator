@@ -1,13 +1,10 @@
 const passwordBOx = document.getElementById("password");
-const lengths = 6;
-
-
 const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lowerCase = "abcdefghijklmnopqrstuvwxyz";
 const numbers = "1234567890";
 const symbols = "~!@#$%^&*_+-=?/><";
 const allChars = upperCase + lowerCase + numbers + symbols;
-
+const length = document.getElementById("lengthSelector");
 
 function createPassword() {
     let password = "";
@@ -16,14 +13,23 @@ function createPassword() {
     password += numbers[Math.floor(Math.random() * numbers.length)];
     password += symbols[Math.floor(Math.random() * symbols.length)];
 
-    while(lengths > password.length) {
+    while(length > password.length) {
         password += allChars[Math.floor(Math.random() * allChars.length)];
     }
-    passwordBOx.value = pass
+    passwordBOx.value = password
 }
 
 
 const button = document.getElementById("gen");
+button.onclick = () => {
+  const pass =   createPassword()
+}
 
-button.onclick = createPassword
+const copyy =document.getElementById("copyButton")
+copyy.onclick = () => {
+    var copyText = document.getElementById("password");
+    copyText.select();
+    navigator.clipboard.writeText(copyText.value);
+    alert("Copied the text: " + copyText.value);
+}
 
