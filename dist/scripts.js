@@ -18,7 +18,6 @@ function createPassword() {
     if (passwordBOx)
         passwordBOx.value = password;
 }
-console.log("Hello");
 const button = document.getElementById("gen");
 if (button)
     button.onclick = () => {
